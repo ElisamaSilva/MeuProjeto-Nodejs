@@ -4,12 +4,12 @@ const bodyParser = require('body-parser')
 
 module.exports = app => {
 
-	app.get("/endereço", (req, res) => {
+	app.get("/endereco", (req, res) => {
 			Endereco.findAll({},(retorno)=>
-							{res.json({endereço: retorno})});
+							{res.json({endereco: retorno})});
 	});
 
-  app.get('/endereço/cep/:cep', (req, res) => {
+  app.get('/endereco/cep/:cep', (req, res) => {
 		var cep = req.params.cep;	
 		const getViaCep = {
             uri: 'https://viacep.com.br/ws/'+cep+'/json/',
@@ -18,23 +18,17 @@ module.exports = app => {
         
 		rp(getViaCep).then(function (parsedBody) {
                 res.send(parsedBody);
-
             }).catch(function (err) { 
                 res.send("ERRO");
             });
 	});
 
   const Endereco = app.models.endereco;
-  app.get("/endereco", (req, res) => {
-    res.status(200).send('OK')
-    
-  });
          
   var jsonParser = bodyParser.json()
-	app.post("/endereços", jsonParser, function(req, res) {
+	app.post("/endereco", jsonParser, function(req, res) {
 		
- 			var usuario = req.body.usuario;
-      var endereço = req.body.endereço
+ 			var idUsuario = req.body.idUsuario;
       var cep = req.body.cep;
       var rua = req.body.rua;
       var numero = req.body.numero;
@@ -45,18 +39,7 @@ module.exports = app => {
 
       console.log(req.body);
       
-			res.json(
-				{
-					usuarioRecebido: usuario,
-          enderecoRecebido: endereco,
-					cepRecebido: cep,
-          ruaRecebido: rua,
-          numeroRecebido: numero,
-          complementoRecebido: complemento,
-          bairroRecebido: bairro,
-          cidadeRecebido: cidade,
-          estadoRecebido: estado,
-				}
-			)
+		 res.status(200).send('OK');
+     
 	});
 };

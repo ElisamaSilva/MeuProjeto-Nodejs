@@ -1,44 +1,29 @@
+const bodyParser = require ('body-parser')
 module.exports = app => {
 	const Categoria = app.models.categoria;
-	const Produto = app.models.produto;
-
-  
 
 	app.get("/categoria", (req, res) => {
 			Categoria.findAll({},(retorno)=>
 							{res.json({categoria: retorno})});
 	});
  
-  app.get("/categoria/:categoria", (req, res) => {
-      var categoria = "xxx";
-      var categoria = req.params.categoria;
-      var listaProdutos = [];
+  app.get("/categoria/:nome", (req, res) => {
+      var nome = req.params.nome;
+      var listaCategoria = [];
 
 			Categoria.findAll({},(retorno) =>
 			{ 
         var retorno = JSON.parse (JSON.stringify (retorno));
-
         for (var e = 0; e < retorno.length; e++) {
-          if (retorno[e].nome.toLowerCase() == categoria.toLowerCase()) {
-            categoria = retorno[e].id;
+          if (retorno[e].nome.toLowerCase().includes (nome.toLowerCase())){
+            listaCategoria.push (retorno[e].idCategoria);
 
-            break;
           }
         }
 
+        res.json({categoria: listacategoria})
+
+      });
       });
 
-      Produto.findAll({},(retorno) =>
-			{ 
-        var retorno = JSON.parse(JSON.stringify(retorno));
-        for (var e = 0; e < retorno.length; e++) {
-
-          if (retorno[e].idCategoria == idCategoria) {
-            listaProdutos.push (retorno[e]);
-          }
-        }
-
-        res.json({categoria: listaProdutos})
-      });
-	});
 };

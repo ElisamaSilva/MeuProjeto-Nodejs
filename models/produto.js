@@ -4,16 +4,16 @@ return{
     return callback(
       [
         
-        {idCategoria:1, produto: "Blusa T-Shirt"},
-        {idCategoria:2, produto: "Protetor Solar"},
-        {idCategoria:3, produto: "Toalha"},
-        {idCategoria:4, produto: "Geladeira"},
-        {idCategoria:5, produto: "Macbook"},
-        {idCategoria:6, produto: "Sofá"},
-        {idCategoria:7, produto: "Playstation"},
-        {idCategoria:8, produto: "Feijão"},
-        {idCategoria:9, produto: "Lenço Umedecido"},
-        {idCategoria:10, produto: "Lily- O Boticario"},
+        {idProduto:1, idCategoria:1, nome: "Blusa T-Shirt"},
+        {idProduto:2, idCategoria:2, nome: "Protetor Solar"},
+        {idProduto:3, idCategoria:3, nome: "Toalha"},
+        {idProduto:4, idCategoria:4, nome: "Geladeira"},
+        {idProduto:5, idCategoria:5, nome: "Macbook"},
+        {idProduto:6, idCategoria:6, nome: "Sofá"},
+        {idProduto:7, idCategoria:7, nome: "Playstation"},
+        {idProduto:8, idCategoria:8, nome: "Feijão"},
+        {idProduto:9, idCategoria:9, nome: "Lenço Umedecido"},
+        {idProduto:10, idCategoria:10, nome: "Lily- O Boticario"},
 
       ]
     )

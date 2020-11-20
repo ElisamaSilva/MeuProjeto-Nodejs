@@ -15,5 +15,5 @@ then ("libs/boot").
 into (app);
 
 app.listen(3000, () => {
-  console.log('server started');
+  console.log('Servidor Iniciando...');
 });

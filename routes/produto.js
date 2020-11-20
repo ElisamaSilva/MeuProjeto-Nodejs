@@ -8,7 +8,7 @@ module.exports = app => {
 	});
  
   app.get("/produto/:produto", (req, res) => {
-      var produto = req.params.produto;
+      var nome = req.params.nome;
       var produtosLista = [];
    
       Produto.findAll({},(retorno) =>
@@ -16,9 +16,10 @@ module.exports = app => {
         var retorno = JSON.parse(JSON.stringify(retorno));
         for (var e = 0; e < retorno.length; e++) {
 
-          if (retorno[e].nome.toLowerCase().includes(produto.toLowerCase())) {
-            produtosLista.push(retorno[e]);
+          if (retorno[e].nome.toLowerCase().includes(nome.toLowerCase())) {
+            produtosLista.push(retorno[e].idProduto);
           }
+
         }
 
         res.json({produto: produtosLista})

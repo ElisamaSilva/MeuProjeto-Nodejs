@@ -2,25 +2,32 @@ module.exports = app => {
 	return {
 			findAll: (params,callback) => {
 				return callback(
-					[
-            
-						{cep:"xxx", usuario:1},
-            {rua:"xxx", usuario:1},
- 					  {numero:"xxx", usuario:1},
-            {bairro:"xxx", usuario:1},
-            {cidade:"xxx", usuario:1},
-            {estado:"xxx", usuario:1},
-            {complemento:"xxx", usuario:1},
 
-            {cep:"xxx", usuario:2},
-            {rua:"xxx", usuario:2},
- 					  {numero:"xxx", usuario:2},
-            {bairro:"xxx", usuario:2},
-            {cidade:"xxx", usuario:2},
-            {estado:"xxx", usuario:2},
-            {complemento:"xxx", usuario:2},
+					[  //inicio da lista
 
-					]
+					{ idEndereco:1,
+            cep:"66017-080",
+            rua:"Carlos Gomes",
+ 					  numero:"138",
+            bairro:"Campina",
+            cidade:"Belem",
+            estado:"Pará",
+            complemento:"Ed. José Peixoto"
+
+           }, //Fim da Lista
+
+          { idEndereco:2,
+            cep:"68600-00",
+            rua:"Visconde de Sousa Franco",
+ 					  numero:"1724",
+            bairro:"Centro",
+            cidade:"Bragança",
+            estado:"Pará",
+            complemento:"Casarão"
+
+            }
+
+					]//Fim
 				)				
 			}
 	}

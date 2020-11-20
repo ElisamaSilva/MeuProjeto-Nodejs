@@ -2,21 +2,25 @@ module.exports = app => {
 	return {
 			findAll: (params,callback) => {
 				return callback(
-					[
-						{usuario:1, nome:"xxx"},
-            {usuario:1, nascimento:"xxx"},
-            {usuario:1, email:"xxx"},
-            {usuario:1, login:"xxx"},
-            {usuario:1, senha:"xxx"},
+          
+					[ //Inico da Lista
+					 { idusuario:1,
+             nome:"Elisa",
+             nascimento:"25/01/1996",
+             email:"ealvesns@gmail.com",
+             login:"Elisa Silva",
+             senha:"202020"
+             
+             }, //Fim da Lista
 
-            {usuario:2, nome:"xxx"},
-            {usuario:2, nascimento:"xxx"},
-            {usuario:2, email:"xxx"},
-            {usuario:2, login:"xxx"},
-            {usuario:2, senha:"xxx"},
-    
-						
-					]
+           { idusuario:2,
+             nome:"Elisama",
+             nascimento:"27/11/1999",
+             email:"ealvesns25@gmail.com",
+             login:"Elisama Silva",
+             senha:"1234567"
+           }
+					] //Fim
 				)				
 			}
 	}
